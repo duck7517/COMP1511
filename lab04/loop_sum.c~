@@ -1,0 +1,35 @@
+// COMP1511 Week 4 Weekly Test: Loop Sum
+// This program reads an integer n,
+// then scans n number of integers,
+// adds them together then prints the sum.
+//
+// This program was written by Lisa (z5312476) 
+// on 9/10/2020
+
+#include <stdio.h>
+
+
+int main(void) {
+    int n;
+    
+    printf("How many numbers: ");
+    scanf("%d", &n);
+    
+    // loop sum
+    int i = 0;
+    int runningCount = 0;
+    int input;
+    while (i < n) {
+        scanf("%d", &input);
+        runningCount += input;
+        i++;
+    }
+    
+    // print result
+    printf("The sum is: %d\n", runningCount);
+    
+    
+    
+    
+    return 0;
+}

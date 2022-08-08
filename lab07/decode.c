@@ -1,0 +1,49 @@
+// COMP1511 Week 7 Laboratory Exercise: Substitution Decoder
+// This program decodes input in a substitution cipher as requested by user.
+//
+// This program was written by Lisa (z5312476) 
+// on 11/2020 for tue17a
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int decode(int character, int charPos);
+
+int main(int argc, char *argv[]) {
+    
+    int charPos;
+    int character = getchar();
+    int charCounter;
+    while (character != -1) {
+        // create a loop to find position of character in input
+        if (character >= 'A' && character <= 'Z') {
+        charCounter = character - 'A' + 'a';
+        charPos = 0;
+            while (charPos < 26 && argv[1][charPos] != charCounter) {
+                charPos++;
+            }
+            character = decode(character, charPos);
+        } else if (character >= 'a' && character <= 'z') {
+            charPos = 0;
+            while (charPos < 26 && argv[1][charPos] != character) {
+                charPos++;
+            }
+            character = decode(character, charPos);
+        }
+        putchar(character);
+        character = getchar();
+    }
+    
+    return 0;
+}
+
+
+int decode(int character, int charPos) {   
+    if (character >= 'A' && character <= 'Z') {
+        character = 'A' + charPos;
+    } else if (character >= 'a' && character <= 'z') {
+        character = 'a' + charPos;
+    }
+    return character;
+}

@@ -1,0 +1,30 @@
+// COMP1511 Week $ Laboratory Exercise: TITLE
+// This program 
+//
+// This program was written by Lisa (z5312476) 
+// on /10/2020 for tue17a
+
+#include <stdio.h>
+
+#define CANVAS_SIZE 36
+
+int main(void) {
+    int canvas[CANVAS_SIZE] = {0};
+    int input;
+    
+    
+    //scan in numbers until ctrl-d
+    
+    while (scanf("%d", &input) == 1) {
+        canvas[input] = 1;
+    }
+    
+    int i = 0;
+    while (i < CANVAS_SIZE) {
+        printf("%d ", canvas[i]);
+        i++;
+    }
+    printf("\n");
+    
+    return 0;
+}

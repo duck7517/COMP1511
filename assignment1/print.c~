@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int startRow = 0;
+    int startCol =0;
+    int endRow=0;
+    int endCol=0;
+    int tgtRow=0;
+    int tgtCol=0;
+    if (scanf("%d %d %d %d %d %d", &startRow, &startCol, &endRow, &endCol, &tgtRow, &tgtCol)) {
+            // Temporary array for storing the copy of requested section
+            int height = abs(startRow - endRow);
+            int length = abs(startCol - endCol);
+            printf("%d %d", height, length);
+    }
+    return 0;
+}

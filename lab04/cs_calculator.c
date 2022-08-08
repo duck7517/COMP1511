@@ -1,0 +1,56 @@
+// COMP1511 Week 4 Laboratory Exercise: Calculator
+// This program scans in instructions until EOF
+// and prints the output.
+// If first number in instruction is 1, program will print 
+// square of next number.
+// If first number is 2, print 2nd number to power of 3rd.
+//
+// This program was written by Lisa (z5312476) 
+// on 06/10/2020 for tue17a
+
+
+#include <stdio.h>
+
+int square(int base);
+int power(int base, int index);
+
+int main(void) {
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    
+    //ask user for numbers
+    printf("Enter instruction: ");
+    while (scanf("%d", &a) == 1) {
+        if (a == 1) {
+            scanf("%d", &b);
+            printf("%d", square(b));
+        } else if (a == 2) {
+            scanf("%d %d", &b, &c);
+            printf("%d", power(b, c));
+        } else { 
+            return 1;
+        }
+        printf("\nEnter instruction: ");
+    }
+    return 0; 
+}
+
+// function for finding square
+int square(int base) {
+    int result;
+    result = base * base;
+    return result;
+}
+
+// function for finding power
+int power(int base, int index) {
+    int i = 0;
+    int result = 1;
+    while (i < index) {
+        result = result * base;
+        i++;
+    }
+    return result;
+}
+

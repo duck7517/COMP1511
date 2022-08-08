@@ -1,0 +1,36 @@
+// COMP1511 Week 2 Laboratory Exercise: Leap Year Calculator
+// This program will read a year input from user
+// and determine whether it is a leap year.
+//
+// This program was written by Lisa (z5312476) 
+// on 22/09/2020 for tue17a
+
+#include <stdio.h>
+
+int main(void) {
+    int year;
+    
+    //Request year input from user
+    printf("Enter year: ");
+    scanf("%d", &year);
+    
+    //Conditions for leap year
+    if (year <= 0) {
+        printf("Please enter a valid year.\n");
+    }
+    if (year % 4 != 0) {
+        printf("%d is not a leap year.\n", year);
+    }
+    else if (year % 100 != 0) {
+        printf("%d is a leap year.\n", year);
+    }
+    else if (year % 400 != 0) {
+        printf("%d is not a leap year.\n", year);
+    } else {
+        printf("%d is a leap year.\n", year);
+    }
+     
+    
+    return 0;
+    
+}

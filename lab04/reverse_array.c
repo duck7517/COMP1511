@@ -1,0 +1,33 @@
+// COMP1511 Week 4 Laboratory Exercise: Reverse Array
+// This program reads input of up to 100 integers until EOF,
+// then prints them in reverse of the order they were entered in.
+//
+// This program was written by Lisa (z5312476) 
+// on 10/10/2020 for tue17a
+
+#include <stdio.h>
+#define MAX_INPUT 100
+
+int main(void) {
+    
+    //print input message
+    printf("Enter numbers forwards: \n");
+    
+    //set up array for max size
+    int reverse[MAX_INPUT] = {0};
+    
+    //scan in integers until eof
+    int i = 0;
+    while (scanf("%d", &reverse[i]) == 1) {
+        i++;
+    }
+    
+    //print reverse of array
+    printf("Reversed: \n");
+    while (i > 0) {
+        printf("%d\n", reverse[i-1]);
+        i--;
+    }
+    
+    return 0;
+}

@@ -1,0 +1,51 @@
+struct library {
+    struct playlist *head;
+    struct playlist *selected;
+};
+
+// 'struct playlist' represents a playlist. 
+// You may choose to add or change fields in this struct.
+struct playlist {
+    char name[MAX_LEN];
+    int numTracks;
+    struct track *tracks;
+    struct playlist *next;
+    struct playlist *back;
+};
+
+// 'struct trackLength' represents the length of a track. 
+// You may choose to add or change fields in this struct.
+struct trackLength {
+    int minutes;
+    int seconds;
+};
+
+// 'struct track' represents a track. 
+// You may choose to add or change fields in this struct.
+struct track {
+    char title[MAX_LEN];
+    char artist[MAX_LEN];
+    struct trackLength length;
+    struct track *next;
+};
+
+typedef struct library *Library;
+typedef struct playlist *Playlist;
+typedef struct track *Track;
+
+/*****************
+> Helper Functions
+*****************/
+
+static void print_playlist(int number, char playlistName[MAX_LEN]) {
+    printf("[ ] %d. %s\n", number, playlistName);
+}
+
+static void print_selected_playlist(int number, char playlistName[MAX_LEN]) {
+    printf("[*] %d. %s\n", number, playlistName);
+}
+
+static void print_track(char title[MAX_LEN], char artist[MAX_LEN], int minutes, int seconds) {
+    printf("       - %-32s    %-24s    %02d:%02d\n", title, artist, 
+        minutes, seconds);
+}
